@@ -42,7 +42,7 @@ Jika teman-teman sudah berhasil menjalankan aplikasi RESTful API dari repository
         - [x] format response
     - [x] Pasang dokumentasi Swagger dalam satu routing
 2. Membuat client-side application dengan React.js
-    - [ ] Buat folder baru, misalkan /client, kemudian buat project baru dalam folder tersebut dengan `$ npm init -y` atau `$ npx create-react-app client`
+    - [x] Buat folder baru, misalkan /client, kemudian buat project baru dalam folder tersebut dengan `$ npm init -y` atau `$ npx create-react-app client`
     - [ ] Buat tampilan/UI untuk fitur berikut :
         - [ ] Form untuk membuat player baru, dengan tombol Submit
         - [ ] Form untuk mengedit player, dengan tombol Submit
