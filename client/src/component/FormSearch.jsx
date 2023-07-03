@@ -1,32 +1,34 @@
 import { useState } from "react";
 
 function FormSearch() {
-    const [dataDropdown, setDataDropdown] = useState('');
-    const [dataFormInput, setDataFormInput] = useState('username');
+    const [dataDropdown, setDataDropdown] = useState('username');
+    const [dataFormInput, setDataFormInput] = useState('');
 
-    const [summary, setSummary] =useState({
+    const [summary, setSummary] = useState({
         criteria: '',
         keyword: ''
     });
+
+    const searchPlayer = (event) => {
+        event.preventDefault();
+
+        if (dataDropdown === '' || dataFormInput === '') {
+            alert('form cannot be empty');
+            return;
+        }
+
+        setSummary({
+            criteria: dataDropdown,
+            keyword: dataFormInput,
+        });
+    }
 
     return (
         <div>
             <h2>Form Search Player</h2>
 
             <div>
-                <form onSubmit={function(event) {
-                    event.preventDefault();
-
-                    if (dataDropdown === '' || dataFormInput === '') {
-                        alert('form cannot be empty');
-                        return;
-                    }
-
-                    setSummary({
-                        criteria: dataDropdown,
-                        keyword: dataFormInput,
-                    });
-                }}>
+                <form onSubmit={searchPlayer}>
                     <div className="input-group">
                         <select name="criteria" id="criteria" className="form-select" onChange={function(event) {
                             setDataDropdown(event.target.value);
@@ -51,7 +53,7 @@ function FormSearch() {
                             <td><strong>{summary.criteria}</strong></td>
                         </tr>
                         <tr>
-                            <td>Keyword</td>
+                            <td>Keyword:</td>
                             <td><strong>{summary.keyword}</strong></td>
                         </tr>
                     </tbody>
